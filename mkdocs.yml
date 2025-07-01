@@ -1,0 +1,97 @@
+site_name: RAPID
+site_description: Routing Application for Parallel computatIon of Discharge - Advanced River Network Modeling
+site_url: https://c-h-david.github.io/rapid-hub
+site_author: RAPID Development Team
+
+nav:
+  - Home: index.md
+  - User Guide:
+      - Quick Start: user-guide/quick-start.md
+      - Getting Started:
+          - Overview: user-guide/getting-started/overview.md
+          - Requirements: user-guide/getting-started/requirements.md
+          - Installation: user-guide/getting-started/installation.md
+          - Running: user-guide/getting-started/running.md
+      - Tutorials:
+          - Training: user-guide/tutorials/training.md
+          - Documents: user-guide/tutorials/documents.md
+  - Developer Guide:
+      - Architecture: developer-guide/architecture.md
+      - Code: developer-guide/code.md
+      - Contributing: developer-guide/contributing.md
+      - Testing: developer-guide/testing.md
+  - About:
+      - Media: about/media.md
+      - Publications: about/publications.md
+      - Acknowledgments: about/acknowledgments.md
+      - Citing: about/citing.md
+      - Intercomparison: about/intercomparison.md
+      - Getting Help: about/getting-help.md
+      - Contact: about/contact.md
+
+theme:
+  name: material
+  logo: imgs/rapid-logo.png
+  favicon: imgs/rapid-logo.png
+  palette:
+    - scheme: default
+      primary: light blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: light blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/c-h-david/rapid2
+      name: RAPID on GitHub
+    - icon: fontawesome/solid/globe
+      link: http://rapid-hub.org/index.html
+      name: Documentation
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true

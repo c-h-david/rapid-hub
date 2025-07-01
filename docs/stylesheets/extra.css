@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+
+/* Alternative approach - target category headers by their position */
+.md-nav--primary .md-nav__item:has(.md-nav) > .md-nav__link {
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+/* Keep active/highlighted items normal size but preserve blue color */
+.md-nav__link--active {
+    font-size: 1em !important;
+    font-weight: normal !important;
+}

@@ -1,2 +1,1 @@
-# rapid-hub
-RAPID Project Website
+# RAPID Hub Website

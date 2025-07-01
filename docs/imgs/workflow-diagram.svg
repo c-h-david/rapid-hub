@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="500" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-family="Inter, Arial" font-size="24" font-weight="600" fill="#1F2937">RAPID Workflow</text>
+  
+  <!-- Input Data Box -->
+  <g transform="translate(50, 100)">
+    <rect width="200" height="120" rx="8" fill="url(#grad1)" opacity="0.1"/>
+    <rect width="200" height="120" rx="8" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Inter, Arial" font-size="16" font-weight="600" fill="#4F46E5">Input Data</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Surface Inflow</text>
+    <text x="100" y="80" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Groundwater Inflow</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Network Connectivity</text>
+  </g>
+  
+  <!-- Processing Box -->
+  <g transform="translate(350, 100)">
+    <rect width="200" height="120" rx="8" fill="url(#grad2)" opacity="0.1"/>
+    <rect width="200" height="120" rx="8" fill="none" stroke="url(#grad2)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Inter, Arial" font-size="16" font-weight="600" fill="#10B981">RAPID Processing</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Muskingum Method</text>
+    <text x="100" y="80" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Matrix Operations</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Parallel Computing</text>
+  </g>
+  
+  <!-- Output Box -->
+  <g transform="translate(650, 100)">
+    <rect width="200" height="120" rx="8" fill="url(#grad3)" opacity="0.1"/>
+    <rect width="200" height="120" rx="8" fill="none" stroke="url(#grad3)" stroke-width="2"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Inter, Arial" font-size="16" font-weight="600" fill="#F59E0B">Output Results</text>
+    <text x="100" y="60" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">River Flow</text>
+    <text x="100" y="80" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Water Volume</text>
+    <text x="100" y="100" text-anchor="middle" font-family="Inter, Arial" font-size="14" fill="#6B7280">Time Series Data</text>
+  </g>
+  
+  <!-- Arrows -->
+  <g stroke="#94A3B8" stroke-width="2" fill="#94A3B8">
+    <line x1="250" y1="160" x2="350" y2="160" marker-end="url(#arrowhead)"/>
+    <line x1="550" y1="160" x2="650" y2="160" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94A3B8"/>
+    </marker>
+  </defs>
+  
+  <!-- Parameter Optimization Loop -->
+  <g transform="translate(0, 280)">
+    <rect x="100" y="0" width="700" height="150" rx="8" fill="none" stroke="#E5E7EB" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="450" y="25" text-anchor="middle" font-family="Inter, Arial" font-size="16" font-weight="600" fill="#64748B">Automated Parameter Optimization</text>
+    
+    <!-- Gage Data -->
+    <rect x="150" y="50" width="150" height="70" rx="6" fill="#EDE9FE"/>
+    <text x="225" y="75" text-anchor="middle" font-family="Inter, Arial" font-size="14" font-weight="500" fill="#7C3AED">Gage Measurements</text>
+    <text x="225" y="95" text-anchor="middle" font-family="Inter, Arial" font-size="12" fill="#6B7280">Historical Data</text>
+    
+    <!-- Optimization -->
+    <rect x="375" y="50" width="150" height="70" rx="6" fill="#DCFCE7"/>
+    <text x="450" y="75" text-anchor="middle" font-family="Inter, Arial" font-size="14" font-weight="500" fill="#10B981">Optimization</text>
+    <text x="450" y="95" text-anchor="middle" font-family="Inter, Arial" font-size="12" fill="#6B7280">Parameter Tuning</text>
+    
+    <!-- Validation -->
+    <rect x="600" y="50" width="150" height="70" rx="6" fill="#FEF3C7"/>
+    <text x="675" y="75" text-anchor="middle" font-family="Inter, Arial" font-size="14" font-weight="500" fill="#F59E0B">Validation</text>
+    <text x="675" y="95" text-anchor="middle" font-family="Inter, Arial" font-size="12" fill="#6B7280">Model Performance</text>
+    
+    <!-- Optimization arrows -->
+    <line x1="300" y1="85" x2="375" y2="85" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="525" y1="85" x2="600" y2="85" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 450 120 Q 450 140 450 220" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Features badges -->
+  <g transform="translate(50, 450)">
+    <rect width="120" height="30" rx="15" fill="#DBEAFE"/>
+    <text x="60" y="20" text-anchor="middle" font-family="Inter, Arial" font-size="12" font-weight="500" fill="#3B82F6">Scalable</text>
+  </g>
+  
+  <g transform="translate(190, 450)">
+    <rect width="120" height="30" rx="15" fill="#D1FAE5"/>
+    <text x="60" y="20" text-anchor="middle" font-family="Inter, Arial" font-size="12" font-weight="500" fill="#10B981">Fast</text>
+  </g>
+  
+  <g transform="translate(330, 450)">
+    <rect width="120" height="30" rx="15" fill="#FEE2E2"/>
+    <text x="60" y="20" text-anchor="middle" font-family="Inter, Arial" font-size="12" font-weight="500" fill="#EF4444">Accurate</text>
+  </g>
+  
+  <g transform="translate(470, 450)">
+    <rect width="120" height="30" rx="15" fill="#F3E8FF"/>
+    <text x="60" y="20" text-anchor="middle" font-family="Inter, Arial" font-size="12" font-weight="500" fill="#9333EA">Flexible</text>
+  </g>
+</svg>
