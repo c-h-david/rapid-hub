@@ -22,4 +22,4 @@
 
 ---
 
-*This page is currently under development. For current code information, please refer to the [RAPID repository](https://github.com/c-h-david/rapid) and existing [technical documentation](../user-guide/tutorials/documents.md).*
+*This page is currently under development. For current code information, please refer to the [RAPID repository](https://github.com/c-h-david/rapid2) and existing [technical documentation](../user-guide/tutorials/documents.md).*

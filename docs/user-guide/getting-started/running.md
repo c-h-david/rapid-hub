@@ -20,7 +20,7 @@ Download all input and output data from David et al. (2011, HP). These include S
 
 ## RAPID Scripts
 
-Additional scripts and tools to help with RAPID execution are available in the [RAPID repository](https://github.com/c-h-david/rapid/) which contains the most current helper scripts and utilities.
+Additional scripts and tools to help with RAPID execution are available in the [RAPID repository](https://github.com/c-h-david/rapid2/) which contains the most current helper scripts and utilities.
 
 ## Further Documentation
 
@@ -28,4 +28,4 @@ For detailed tutorials and advanced usage, see the [Tutorials](../tutorials/trai
 
 ## Need Help?
 
-If you need information on using RAPID that is not included here or in the RAPID publications, please don't hesitate to [ask on GitHub](https://github.com/c-h-david/rapid/issues/new/choose) as feedback is enthusiastically appreciated and new users welcome!
+If you need information on using RAPID that is not included here or in the RAPID publications, please don't hesitate to [ask on GitHub](https://github.com/c-h-david/rapid2/issues/new/choose) as feedback is enthusiastically appreciated and new users welcome!

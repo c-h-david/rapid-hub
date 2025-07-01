@@ -6,7 +6,7 @@ For comprehensive documentation on RAPID, please refer to the following resource
 
 ## Primary Documentation
 
-- **Source Code Repository**: Complete documentation is available in the [RAPID GitHub repository](https://github.com/c-h-david/rapid)
+- **Source Code Repository**: Complete documentation is available in the [RAPID GitHub repository](https://github.com/c-h-david/rapid2)
 - **Installation Guide**: Detailed installation instructions are available in the repository
 - **User Manual**: Comprehensive user documentation is maintained in the repository
 

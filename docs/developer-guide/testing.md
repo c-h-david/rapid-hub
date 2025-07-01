@@ -26,4 +26,4 @@
 
 ---
 
-*This page is currently under development. For current testing information, please refer to the [RAPID repository](https://github.com/c-h-david/rapid) and [contributing guidelines](contributing.md).*
+*This page is currently under development. For current testing information, please refer to the [RAPID repository](https://github.com/c-h-david/rapid2) and [contributing guidelines](contributing.md).*

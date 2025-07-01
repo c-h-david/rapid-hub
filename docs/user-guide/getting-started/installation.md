@@ -2,11 +2,11 @@
 
 ## RAPID Code
 
-RAPID is now on GitHub at [https://github.com/c-h-david/rapid/](https://github.com/c-h-david/rapid/).
+RAPID is now on GitHub at [https://github.com/c-h-david/rapid2/](https://github.com/c-h-david/rapid2/).
 
-The latest official release is available [here](https://github.com/c-h-david/rapid/releases/latest).
+The latest official release is available [here](https://github.com/c-h-david/rapid2/releases/latest).
 
-You may also [Fork RAPID on GitHub](https://github.com/c-h-david/rapid/fork).
+You may also [Fork RAPID on GitHub](https://github.com/c-h-david/rapid2/fork).
 
 The RAPID repository on GitHub includes all versions of the code that were published online since September 2010 with tracked changes.
 

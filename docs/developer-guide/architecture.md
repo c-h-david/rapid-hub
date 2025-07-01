@@ -18,4 +18,4 @@
 
 ---
 
-*This page is currently under development. For detailed technical information, please refer to the [source code](https://github.com/c-h-david/rapid) and existing [documentation](../user-guide/tutorials/documents.md).*
+*This page is currently under development. For detailed technical information, please refer to the [source code](https://github.com/c-h-david/rapid2) and existing [documentation](../user-guide/tutorials/documents.md).*

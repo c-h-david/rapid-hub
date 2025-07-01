@@ -69,6 +69,8 @@ RAPID is available under the Berkeley Software Distribution 3-clause license, ma
 **Community Support**  
 Access comprehensive documentation, training materials, and connect with the RAPID community for support and collaboration.
 
-[Learn More →](user-guide/tutorials/documents.md)
-[GitHub Repository →](https://github.com/c-h-david/rapid)
-[Get Help →](about/getting-help.md)
+[Quick Start](user-guide/quick-start.md)
+
+[GitHub Repository](https://github.com/c-h-david/rapid2)
+
+[Get Help](about/getting-help.md)

@@ -8,9 +8,9 @@ The Routing Application for Parallel computatIon of Discharge (RAPID) is a river
 
 ## Download
 
-RAPID is available on GitHub at [https://github.com/c-h-david/rapid/](https://github.com/c-h-david/rapid/).
+RAPID is available on GitHub at [https://github.com/c-h-david/rapid2/](https://github.com/c-h-david/rapid2/).
 
-The latest official release is available [here](https://github.com/c-h-david/rapid/releases/latest).
+The latest official release is available [here](https://github.com/c-h-david/rapid2/releases/latest).
 
 ## Installation
 
@@ -30,4 +30,4 @@ To get started quickly with RAPID, download sample input/output data:
 
 For detailed installation and usage instructions, see the [Getting Started](getting-started/overview.md) section.
 
-If you need additional help, please [ask on GitHub](https://github.com/c-h-david/rapid/issues/new/choose) - feedback is enthusiastically appreciated and new users welcome!
+If you need additional help, please [ask on GitHub](https://github.com/c-h-david/rapid2/issues/new/choose) - feedback is enthusiastically appreciated and new users welcome!

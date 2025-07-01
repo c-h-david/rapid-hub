@@ -14,7 +14,7 @@ RAPID provides the following capabilities:
 
 ## Getting Help
 
-This website contains [documents](../tutorials/documents.md), a [link to the source code](https://github.com/c-h-david/rapid/) as well as resources that should allow you to get started with using RAPID.
+This website contains [documents](../tutorials/documents.md), a [link to the source code](https://github.com/c-h-david/rapid2/) as well as resources that should allow you to get started with using RAPID.
 
 The [publications](../../about/publications.md) also contain a lot of valuable information about RAPID's methodology and applications.
 
