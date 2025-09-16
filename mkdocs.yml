@@ -68,6 +68,10 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - js/mermaid.min.js
+  - js/mermaid-init.js
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -85,7 +89,11 @@ markdown_extensions:
   - admonition
   - codehilite
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:

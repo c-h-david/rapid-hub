@@ -61,7 +61,7 @@ Ready to model river networks with cutting-edge technology?
 
 ## About RAPID
 
-The Routing Application for Parallel computatIon of Discharge (RAPID) is a river routing model that computes flow and volume of water in river networks. Using a matrix version of the Muskingum method, RAPID can be adapted to any river network with basic connectivity information.
+The Routing Application for Parallel computatIon of Discharge (RAPID) is a river network routing model. Given external inflow to rivers, this model can compute the flow of water everywhere in river networks made out of many thousands of reaches. Using a matrix version of the Muskingum method, RAPID can be adapted to any river network with basic connectivity information.
 
 **Open Source & Free**  
 RAPID is available under the Berkeley Software Distribution 3-clause license, making it free for academic and commercial use.
