@@ -73,6 +73,7 @@ extra_javascript:
   - js/mermaid-init.js
 
 extra:
+  rapid_repo: https://github.com/c-h-david/rapid2
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/c-h-david/rapid2
@@ -84,6 +85,7 @@ extra:
 plugins:
   - search:
       lang: en
+  - macros
 
 markdown_extensions:
   - admonition
