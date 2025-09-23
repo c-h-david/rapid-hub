@@ -34,9 +34,14 @@ Nearly 19 years of continuous development and application since January 2006, de
 
 ## Used By
 
-RAPID is trusted by leading research institutions and organizations worldwide:
+RAPID is used by individuals at the following institutions:
 
-*[Organization logos and names will be displayed here]*
+- **[National Aeronautics and Space Administration (NASA)](https://www.nasa.gov)**
+- **[Jet Propulsion Laboratory (JPL)](https://www.jpl.nasa.gov)**  
+- **[United States Army Corps of Engineers](https://www.usace.army.mil)**
+- **[University of Maryland](https://www.umd.edu)**
+- **[University of Texas at Austin](https://www.utexas.edu)**
+- **[Centre National d'Études Spatiales (CNES)](https://cnes.fr)**
 
 ---
 
