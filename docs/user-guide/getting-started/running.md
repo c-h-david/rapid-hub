@@ -14,6 +14,18 @@ or
 rapid2 --namelist namelist.yml
 ```
 
+**Expected Output (when files exist):**
+```
+Namelist file: namelist.yml
+Done
+```
+
+**Expected Output (when input files are missing):**
+```
+Namelist file: namelist.yml
+ERROR - Unable to open ./input/Test/rapid_connect_Test.csv
+```
+
 ## Namelist Configuration
 
 RAPID requires a YAML namelist file that specifies all necessary input and output files. Here's an example configuration:
@@ -71,6 +83,14 @@ RAPID produces the following outputs:
 RAPID accepts the following command line arguments:
 
 - `-nl, --namelist`: Path to the YAML namelist file (required)
+
+## Important Note About Input Data
+
+The namelist example above uses sample file paths. To actually run RAPID, you need:
+
+1. **Real input data files** (connectivity, parameters, external inflow, initial conditions)
+2. **Sample datasets** are available from the links below
+3. **Create output directories** before running RAPID
 
 ## Sample Data
 

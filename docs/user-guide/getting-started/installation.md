@@ -20,7 +20,15 @@ git clone https://github.com/c-h-david/rapid2
 cd rapid2
 ```
 
-### 2. Install Using pip
+### 2. Create Virtual Environment (Recommended)
+```bash
+python3 -m venv rapid_env
+source rapid_env/bin/activate
+```
+
+**Note:** A virtual environment is strongly recommended, especially on macOS, to avoid conflicts with system Python packages.
+
+### 3. Install RAPID
 ```bash
 pip3 install .
 ```
@@ -76,7 +84,19 @@ After installation, verify RAPID is properly installed:
 rapid2 --help
 ```
 
-You should see the help message for the RAPID command-line interface.
+**Expected Output:**
+```
+usage: rapid2 [-h] -nl NAMELIST
+
+This is RAPID2
+
+options:
+  -h, --help            show this help message and exit
+  -nl, --namelist NAMELIST
+                        Specify the namelist value
+```
+
+If you see this output, RAPID has been successfully installed!
 
 ## Community Tools
 
