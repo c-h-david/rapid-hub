@@ -4,19 +4,25 @@ An accelerated guide to quickly understand, download, install, use, and apply RA
 
 ## Overview
 
-The Routing Application for Parallel computatIon of Discharge (RAPID) is a river routing model that computes flow and volume of water in river networks. This quick start guide will get you up and running with RAPID in the shortest time possible.
+Get RAPID running in 3 simple steps.
 
-## Download
+## Quick Installation
 
-RAPID is available on GitHub at [https://github.com/c-h-david/rapid2/](https://github.com/c-h-david/rapid2/).
+```bash
+git clone https://github.com/c-h-david/rapid2
+cd rapid2
+pip3 install .
+```
 
-The latest official release is available [here](https://github.com/c-h-david/rapid2/releases/latest).
+## Quick Run
 
-## Installation
+```bash
+rapid2 -nl namelist.yml
+```
 
-Download the latest release from GitHub and follow the installation instructions in the repository.
+That's it! 
 
-For detailed installation instructions, see the [Getting Started](getting-started/overview.md) section.
+**Need more details?** See the complete [Installation Guide](getting-started/installation.md) and [Running Guide](getting-started/running.md).
 
 ## Sample Use Case
 

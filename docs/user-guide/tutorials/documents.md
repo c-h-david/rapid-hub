@@ -6,9 +6,12 @@ For comprehensive documentation on RAPID, please refer to the following resource
 
 ## Primary Documentation
 
-- **Source Code Repository**: Complete documentation is available in the [RAPID GitHub repository](https://github.com/c-h-david/rapid2)
-- **Installation Guide**: Detailed installation instructions are available in the repository
-- **User Manual**: Comprehensive user documentation is maintained in the repository
+- **This Documentation Site**: Comprehensive user and developer guides with installation, usage, and architecture information
+- **Source Code Repository**: Complete technical documentation is available in the [RAPID GitHub repository](https://github.com/c-h-david/rapid2)
+- **README**: Comprehensive overview, installation, and usage instructions in the repository README.md
+- **Module Documentation**: Each Python module contains detailed docstrings with examples
+- **Configuration Files**: Example YAML namelist files and input data specifications
+- **Requirements**: Complete dependency lists in `requirements.pip` and `requirements.apt`
 
 ## Additional Resources
 

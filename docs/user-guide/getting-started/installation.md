@@ -2,7 +2,7 @@
 
 ## RAPID Code
 
-RAPID is now on GitHub at [https://github.com/c-h-david/rapid2/](https://github.com/c-h-david/rapid2/).
+RAPID is available on GitHub at [https://github.com/c-h-david/rapid2/](https://github.com/c-h-david/rapid2/).
 
 The latest official release is available [here](https://github.com/c-h-david/rapid2/releases/latest).
 
@@ -10,11 +10,93 @@ You may also [Fork RAPID on GitHub](https://github.com/c-h-david/rapid2/fork).
 
 The RAPID repository on GitHub includes all versions of the code that were published online since September 2010 with tracked changes.
 
-## Installation Steps
+## Quick Installation
 
-1. Download the latest release from GitHub
-2. Follow the installation instructions provided in the repository
-3. Install any required dependencies (see [Requirements](requirements.md))
+For a quick installation, follow these steps:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/c-h-david/rapid2
+cd rapid2
+```
+
+### 2. Create Virtual Environment (Recommended)
+```bash
+python3 -m venv rapid_env
+source rapid_env/bin/activate
+```
+
+**Note:** A virtual environment is strongly recommended, especially on macOS, to avoid conflicts with system Python packages.
+
+### 3. Install RAPID
+```bash
+pip3 install .
+```
+
+This will automatically install RAPID and all its Python dependencies.
+
+## Manual Installation Steps
+
+If you prefer a manual installation:
+
+### 1. Verify Requirements
+Ensure you have the required system components (see [Requirements](requirements.md)):
+- `git`
+- `python3.11`
+- `pip3`
+
+### 2. Download the Source Code
+```bash
+git clone https://github.com/c-h-david/rapid2
+cd rapid2
+```
+
+### 3. Install Dependencies
+```bash
+pip3 install -r requirements.pip
+```
+
+### 4. Install RAPID
+```bash
+pip3 install .
+```
+
+## System-Level Installation (Debian/Ubuntu)
+
+For Debian-based systems, you can install system packages first:
+
+```bash
+sudo apt-get install -y --no-install-recommends \
+     $(grep -v -E '(^#|^$)' requirements.apt)
+```
+
+Then ensure Python 3.11 is the default:
+```bash
+sudo rm -f /usr/bin/python3
+sudo ln -s /usr/bin/python3.11 /usr/bin/python3
+```
+
+## Verifying Installation
+
+After installation, verify RAPID is properly installed:
+
+```bash
+rapid2 --help
+```
+
+**Expected Output:**
+```
+usage: rapid2 [-h] -nl NAMELIST
+
+This is RAPID2
+
+options:
+  -h, --help            show this help message and exit
+  -nl, --namelist NAMELIST
+                        Specify the namelist value
+```
+
+If you see this output, RAPID has been successfully installed!
 
 ## Community Tools
 
