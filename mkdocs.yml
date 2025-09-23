@@ -7,14 +7,12 @@ nav:
   - Home: index.md
   - User Guide:
       - Quick Start: user-guide/quick-start.md
-      - Getting Started:
-          - Overview: user-guide/getting-started/overview.md
-          - Requirements: user-guide/getting-started/requirements.md
-          - Installation: user-guide/getting-started/installation.md
-          - Running: user-guide/getting-started/running.md
-      - Tutorials:
-          - Training: user-guide/tutorials/training.md
-          - Documents: user-guide/tutorials/documents.md
+      - Overview: user-guide/getting-started/overview.md
+      - Requirements: user-guide/getting-started/requirements.md
+      - Installation: user-guide/getting-started/installation.md
+      - Running: user-guide/getting-started/running.md
+      - Training: user-guide/tutorials/training.md
+      - Documents: user-guide/tutorials/documents.md
   - Developer Guide:
       - Architecture: developer-guide/architecture.md
       - Code: developer-guide/code.md
