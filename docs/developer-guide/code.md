@@ -24,6 +24,14 @@ rapid2/
 │       └── [other modules...]
 ```
 
+**Key Modules:**
+
+- **[`_rapid2.py`]({{ extra.rapid_repo }}/blob/main/src/_rapid2.py)** - Main entry point
+- **[`nml_cfg.py`]({{ extra.rapid_repo }}/blob/main/src/rapid2/nml_cfg.py)** - Configuration management
+- **[`con_vec.py`]({{ extra.rapid_repo }}/blob/main/src/rapid2/con_vec.py)** - Connectivity processing
+- **[`mus_rte.py`]({{ extra.rapid_repo }}/blob/main/src/rapid2/mus_rte.py)** - Muskingum routing engine
+- **[`net_mat.py`]({{ extra.rapid_repo }}/blob/main/src/rapid2/net_mat.py)** - Network matrix construction
+
 ## Variable Naming Conventions
 
 RAPID follows specific naming conventions inherited from its Fortran origins:
@@ -59,4 +67,4 @@ RAPID follows specific naming conventions inherited from its Fortran origins:
 
 ---
 
-For detailed implementation details and testing procedures, see the source files and [TESTING.md](https://github.com/c-h-david/rapid2/blob/main/TESTING.md) in the [RAPID repository](https://github.com/c-h-david/rapid2).
+For detailed implementation details and testing procedures, see the source files and [TESTING.md]({{ extra.rapid_repo }}/blob/main/TESTING.md) in the [RAPID repository]({{ extra.rapid_repo }}).

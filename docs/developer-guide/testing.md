@@ -74,4 +74,4 @@ python3 -m doctest src/rapid2/*.py
 
 ---
 
-For complete testing procedures and configuration details, see [TESTING.md](https://github.com/c-h-david/rapid2/blob/main/TESTING.md) in the [RAPID repository](https://github.com/c-h-david/rapid2).
+For complete testing procedures and configuration details, see [TESTING.md]({{ extra.rapid_repo }}/blob/main/TESTING.md) in the [RAPID repository]({{ extra.rapid_repo }}).

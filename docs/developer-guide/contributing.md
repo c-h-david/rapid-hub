@@ -25,7 +25,7 @@ RAPID is an open-source project hosted on GitHub. There are several ways you can
 
 ## Detailed Contributing Guidelines
 
-For comprehensive contributing guidelines, please see the [CONTRIBUTING.md](https://github.com/c-h-david/rapid2/blob/main/CONTRIBUTING.md) file in the RAPID repository, which includes:
+For comprehensive contributing guidelines, please see the [CONTRIBUTING.md]({{ extra.rapid_repo }}/blob/main/CONTRIBUTING.md) file in the RAPID repository, which includes:
 
 - **Prerequisites**: License terms, Code of Conduct, and Code of Scientific Collaboration
 - **Development Process**: Visual workflow showing how contributions are integrated
@@ -34,9 +34,9 @@ For comprehensive contributing guidelines, please see the [CONTRIBUTING.md](http
 
 ## Getting Started
 
-1. Read the detailed [Contributing Guide](https://github.com/c-h-david/rapid2/blob/main/CONTRIBUTING.md)
-2. Review the [Code of Conduct](https://github.com/c-h-david/rapid2/blob/main/CODE_OF_CONDUCT.md)
-3. Check the [Code of Scientific Collaboration](https://github.com/c-h-david/rapid2/blob/main/CODE_OF_COLLAB.md)
+1. Read the detailed [Contributing Guide]({{ extra.rapid_repo }}/blob/main/CONTRIBUTING.md)
+2. Review the [Code of Conduct]({{ extra.rapid_repo }}/blob/main/CODE_OF_CONDUCT.md)
+3. Check the [Code of Scientific Collaboration]({{ extra.rapid_repo }}/blob/main/CODE_OF_COLLAB.md)
 4. Start a discussion or submit an issue before major contributions
 5. Fork the repository and create a feature branch
 6. Submit a pull request with your changes
