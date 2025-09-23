@@ -19,14 +19,14 @@ any dentritic river network with basic connectivity information.
 
 ## Why Choose RAPID?
 
-🔬 **Free and Open Source**
+🆓 **Free and Open Source**
 
 RAPID follows best practices for rigorous open science with transparent
 methodology, reproducible results, open datasets, and open-source code. Our
 code is available under a BSD 3-clause license, making it free for academic and
 commercial use.
 
-📚 **Backed by Peer-Reviewed Publications**
+🔬 **Backed by Peer-Reviewed Publications**
 
 Built using scientific methods published in international peer-reviewed
 journals.
