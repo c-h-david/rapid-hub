@@ -2,38 +2,45 @@
 
 An accelerated guide to quickly understand, download, install, use, and apply RAPID to a sample use case.
 
-## Overview
+## Quick Install
 
 Get RAPID running in 3 simple steps.
 
-## Quick Installation
-
 ```bash
 git clone https://github.com/c-h-david/rapid2
-cd rapid2
+cd rapid2/
 pip3 install .
 ```
 
-## Quick Run
+## Quick Use Case
+
+Download the sandbox for RAPID.
 
 ```bash
-rapid2 -nl namelist.yml
+cd tst/
+./tst_dwnl_Sandbox.sh
 ```
 
-That's it! 
+> Or get it manually at
+>
+> [![10.5281/zenodo.17298742](https://zenodo.org/badge/doi/10.5281/zenodo.17298742.svg)](https://doi.org/10.5281/zenodo.17298742)
 
-**Need more details?** See the complete [Installation Guide](getting-started/installation.md) and [Running Guide](getting-started/running.md).
 
-## Sample Use Case
+## Quick Run
 
-To get started quickly with RAPID, download sample input/output data:
+Run RAPID.
 
-- **San Antonio and Guadalupe River Basins (Texas)**: Download all input and output data from David et al. (2011, JHM) for a 4-year run (2004-2007) [![10.5281/zenodo.16565](https://zenodo.org/badge/doi/10.5281/zenodo.16565.svg)](http://dx.doi.org/10.5281/zenodo.16565)
+```bash
+rapid2 -nl namelist_Sandbox.yml
+```
 
-- **SIM-France domain**: Download all input and output data from David et al. (2011, HP) for a 10-year run (1995-2005) [![10.5281/zenodo.30228](https://zenodo.org/badge/doi/10.5281/zenodo.30228.svg)](http://dx.doi.org/10.5281/zenodo.30228)
+That's it!
 
-## Need Help?
+## Need More?
 
-For detailed installation and usage instructions, see the [Getting Started](getting-started/overview.md) section.
+For step-by-step setup details, see the [User Guide](getting-started/installation.md).
 
-If you need additional help, please [ask on GitHub](https://github.com/c-h-david/rapid2/issues/new/choose) - feedback is enthusiastically appreciated and new users welcome!
+You can also find additional information and join the conversation in our [GitHub Discussions](https://github.com/c-h-david/rapid2/discussions).
+We warmly welcome new users and greatly value your feedback!
+
+For short-term exchanges (messages deleted after 6 months), you can connect through the unofficial user community Slack channel.
