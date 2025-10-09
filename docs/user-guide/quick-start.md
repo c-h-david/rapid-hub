@@ -19,6 +19,7 @@ Download the sandbox for RAPID.
 ```bash
 cd tst/
 ./tst_dwnl_Sandbox.sh
+cd ..
 ```
 
 > Or get it manually at
@@ -31,7 +32,7 @@ cd tst/
 Run RAPID.
 
 ```bash
-rapid2 -nl namelist_Sandbox.yml
+rapid2 -nl input/Sandbox/namelist_Sandbox.yml
 ```
 
 That's it!
