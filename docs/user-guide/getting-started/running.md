@@ -78,6 +78,17 @@ RAPID produces the following outputs:
 - **Discharge time series** (`Qou_ncf`): Routed discharge for all time steps
 - **Final state** (`Qfi_ncf`): Final discharge values for model restart
 
+### Finding Your Results
+
+After a successful run, output files will be written to the paths you specified in your namelist configuration. The output location is determined by the `Qou_ncf` and `Qfi_ncf` parameters in your YAML file.
+
+For the Sandbox example from the [Quick Start](../../quick-start.md) guide, results can be found at:
+
+- `./output/Sandbox/Qout_Sandbox_19700101_19700110.nc4` - discharge time series
+- `./output/Sandbox/Qfinal_Sandbox_19700101_19700110.nc4` - final state for model restart
+
+Make sure the output directories exist before running RAPID, or the program will fail to write results.
+
 ## Command Line Options
 
 RAPID accepts the following command line arguments:
