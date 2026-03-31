@@ -86,14 +86,19 @@ rapid2 --help
 
 **Expected Output:**
 ```
-usage: rapid2 [-h] -nl NAMELIST
+usage: rapid2 [-h] [--version] -nml NAMELIST
 
-This is RAPID2
+Routing Application for Programmed Integration of Discharge (RAPID).
 
 options:
   -h, --help            show this help message and exit
-  -nl, --namelist NAMELIST
-                        Specify the namelist value
+  --version             show program's version number and exit
+  -nml NAMELIST, --namelist NAMELIST
+                        specify the namelist file
+
+examples:
+  rapid2 --namelist input/Sandbox/namelist_Sandbox.yml
+  rapid2 --namelist input/Tutorial/namelist_Tutorial.yml
 ```
 
 If you see this output, RAPID has been successfully installed!

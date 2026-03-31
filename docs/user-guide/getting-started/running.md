@@ -5,12 +5,6 @@
 RAPID uses a YAML configuration file (namelist) to specify input files, parameters, and output locations. The basic command to run RAPID is:
 
 ```bash
-rapid2 -nl namelist.yml
-```
-
-or
-
-```bash
 rapid2 --namelist namelist.yml
 ```
 
@@ -93,7 +87,7 @@ Make sure the output directories exist before running RAPID, or the program will
 
 RAPID accepts the following command line arguments:
 
-- `-nl, --namelist`: Path to the YAML namelist file (required)
+- `-nml, --namelist`: Path to the YAML namelist file (required)
 
 ## Important Note About Input Data
 

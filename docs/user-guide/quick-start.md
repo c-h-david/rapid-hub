@@ -32,7 +32,7 @@ cd ..
 Run RAPID.
 
 ```bash
-rapid2 -nl input/Sandbox/namelist_Sandbox.yml
+rapid2 --namelist input/Sandbox/namelist_Sandbox.yml
 ```
 
 That's it!
