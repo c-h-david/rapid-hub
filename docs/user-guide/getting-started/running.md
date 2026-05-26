@@ -1,124 +1,156 @@
 # Running RAPID
 
-## Getting Started with Execution
+This tutorial demonstrates a real scientific workflow using RAPID2. It focuses
+on obtaining input data, running the model, and verifying that results match
+expectations.
 
-RAPID uses a YAML configuration file (namelist) to specify input files, parameters, and output locations. The basic command to run RAPID is:
+All commands below are written in `bash`. This example is intended to serve as
+a primary reference for new users.
 
-```bash
-rapid2 --namelist namelist.yml
+## 1. Get Started
+
+Create working directories:
+
+``` bash
+mkdir -p input/Tutorial
+mkdir -p output/Tutorial
 ```
 
-**Expected Output (when files exist):**
-```
-Namelist file: namelist.yml
-Done
+We'll be using files from a Zenodo repository:
+
+[![DOI:10.5281/zenodo.8248069][SVG_ZENODO]][URL_ZENODO]
+
+Specifically, the following files are needed:
+
+- `rapid_connect_pfaf_ii.zip`
+- `coords_pfaf_ii.zip`
+- `rapid_coupling_pfaf_ii_GLDAS.zip`
+
+For this tutorial, we use the `pfaf_74` files, corresponding to the Mississippi
+River Basin.
+
+## 2. Download Raw Runoff Data with `dgldas2`
+
+Download GLDAS phase `2.1`, model `VIC`, for `2010-01`:
+
+``` bash
+dgldas2 \
+    --phase 2.1 \
+    --model VIC \
+    --time 2010-01 \
+    --land_surface_model \
+    input/Tutorial/GLDAS_2.1_VIC_2010-01.nc4
 ```
 
-**Expected Output (when input files are missing):**
-```
-Namelist file: namelist.yml
-ERROR - Unable to open ./input/Test/rapid_connect_Test.csv
+The new file is placed in `input/Tutorial`. Other files are also automatically
+downloaded in that directory and removed after use.
+
+> Note: GLDAS `2.0` is also supported, as are the `CLSM` and `NOAH` models.
+
+## 3. Transform Runoff to RAPID External Inflow with `cpllsm`
+
+Convert the GLDAS runoff file into RAPID external inflow format:
+
+``` bash
+cpllsm \
+    --land_surface_model \
+    input/Tutorial/GLDAS_2.1_VIC_2010-01.nc4 \
+    --connectivity \
+    input/Tutorial/rapid_connect_pfaf_74.csv \
+    --coordinates \
+    input/Tutorial/coords_pfaf_74.csv \
+    --coupling \
+    input/Tutorial/rapid_coupling_pfaf_74_GLDAS.csv \
+    --external_inflow \
+    input/Tutorial/Qext_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4
 ```
 
-## Namelist Configuration
+## 4. Create Cold Start File with `zeroqinit`
 
-RAPID requires a YAML namelist file that specifies all necessary input and output files. Here's an example configuration:
+``` bash
+zeroqinit \
+    --external_inflow \
+    input/Tutorial/Qext_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4 \
+    --initial_outflow \
+    input/Tutorial/Qinit_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4
+```
+
+## 5. Run the Routing Model with `rapid2`
+
+Using the following content in a file called `namelist_Tutorial.md`
 
 ```yaml
----
-# External inflow file (NetCDF4)
-Qex_ncf: './input/Test/Qext_Test_20000101_20000102.nc4'
+# -----------------------------------------------------------------------------
+# Mandatory input files
+# -----------------------------------------------------------------------------
+Qex_ncf: './input/Tutorial/Qext_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4'
+Q00_ncf: './input/Tutorial/Qinit_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4'
 
-# Initial discharge state file (NetCDF4)
-Q00_ncf: './input/Test/Qinit_Test_20000101_20000102.nc4'
+con_csv: './input/Tutorial/rapid_connect_pfaf_74.csv'
+kpr_csv: './input/Tutorial/k_pfaf_74_nrm.csv'
+xpr_csv: './input/Tutorial/x_pfaf_74_nrm.csv'
 
-# River network connectivity (CSV)
-con_csv: './input/Test/rapid_connect_Test.csv'
+bas_csv: './input/Tutorial/riv_bas_id_pfaf_74_topo.csv'
 
-# Muskingum k parameter (CSV)
-kpr_csv: './input/Test/k_Test.csv'
-
-# Muskingum x parameter (CSV)
-xpr_csv: './input/Test/x_Test.csv'
-
-# River basin IDs (CSV)
-bas_csv: './input/Test/riv_bas_id_Test.csv'
-
-# Routing time step (seconds)
+# -----------------------------------------------------------------------------
+# Mandatory values
+# -----------------------------------------------------------------------------
 IS_dtR: 900
 
-# Output discharge file (NetCDF4)
-Qou_ncf: './output/Test/Qout_Test_20000101_20000102_tst.nc4'
-
-# Final discharge state file (NetCDF4)
-Qfi_ncf: './output/Test/Qfinal_Test_20000101_20000102_tst.nc4'
+# -----------------------------------------------------------------------------
+# Mandatory output files
+# -----------------------------------------------------------------------------
+Qou_ncf: './output/Tutorial/Qout_pfaf_74_GLDAS_2.1_VIC_2010-01_tst.nc4'
+Qfi_ncf: './output/Tutorial/Qfinal_pfaf_74_GLDAS_2.1_VIC_2010-01_tst.nc4'
 ```
 
-## Required Input Files
+``` bash
+rapid2 --namelist input/Tutorial/namelist_Tutorial.yml
+```
 
-### River Network Files (CSV format)
-- **Connectivity file** (`con_csv`): Defines river network topology with upstream/downstream relationships
-- **Basin IDs file** (`bas_csv`): Specifies which river reaches are included in the simulation
-- **Parameter files** (`kpr_csv`, `xpr_csv`): Muskingum routing parameters for each river reach
+## 6. Compare Files to Baseline with `cmpncf`
 
-### Hydrological Data (NetCDF4 format)
-- **External inflow** (`Qex_ncf`): Lateral inflow from land surface models
-- **Initial conditions** (`Q00_ncf`): Starting discharge values for all river reaches
+``` bash
+cmpncf \
+    --previous \
+    input/Tutorial/Qinit_pfaf_74_GLDAS_2.1_VIC_2010-01_GOLD.nc4 \
+    --now \
+    input/Tutorial/Qinit_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4 \
+    --relative_tolerance 1e-6 \
+    --absolute_tolerance 1e-3
+```
 
-## Output Files
+```bash
+cmpncf \
+    --previous \
+    input/Tutorial/Qext_pfaf_74_GLDAS_2.1_VIC_2010-01_GOLD.nc4 \
+    --now \
+    input/Tutorial/Qext_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4 \
+    --relative_tolerance 1e-6 \
+    --absolute_tolerance 1e-3
+```
 
-RAPID produces the following outputs:
+``` bash
+cmpncf \
+    --previous \
+    output/Tutorial/Qout_pfaf_74_GLDAS_2.1_VIC_2010-01_GOLD.nc4 \
+    --now \
+    output/Tutorial/Qout_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4 \
+    --relative_tolerance 1e-6 \
+    --absolute_tolerance 1e-3
+```
 
-- **Discharge time series** (`Qou_ncf`): Routed discharge for all time steps
-- **Final state** (`Qfi_ncf`): Final discharge values for model restart
+```bash
+cmpncf \
+    --previous \
+    output/Tutorial/Qfinal_pfaf_74_GLDAS_2.1_VIC_2010-01_GOLD.nc4 \
+    --now \
+    output/Tutorial/Qfinal_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4 \
+    --relative_tolerance 1e-6 \
+    --absolute_tolerance 1e-3
+```
 
-### Finding Your Results
+<!-- pyml disable-num-lines 30 line-length -->
+[SVG_ZENODO]: https://zenodo.org/badge/doi/10.5281/zenodo.8248069.svg
 
-After a successful run, output files will be written to the paths you specified in your namelist configuration. The output location is determined by the `Qou_ncf` and `Qfi_ncf` parameters in your YAML file.
-
-For the Sandbox example from the [Quick Start](../../quick-start.md) guide, results can be found at:
-
-- `./output/Sandbox/Qout_Sandbox_19700101_19700110.nc4` - discharge time series
-- `./output/Sandbox/Qfinal_Sandbox_19700101_19700110.nc4` - final state for model restart
-
-Make sure the output directories exist before running RAPID, or the program will fail to write results.
-
-## Command Line Options
-
-RAPID accepts the following command line arguments:
-
-- `-nml, --namelist`: Path to the YAML namelist file (required)
-
-## Important Note About Input Data
-
-The namelist example above uses sample file paths. To actually run RAPID, you need:
-
-1. **Real input data files** (connectivity, parameters, external inflow, initial conditions)
-2. **Sample datasets** are available from the links below
-3. **Create output directories** before running RAPID
-
-## Sample Data
-
-Download sample input/output data to test your RAPID installation:
-
-### San Antonio and Guadalupe River Basins (Texas)
-Download all input and output data from David et al. (2011, JHM). These include NHDPlus river network connectivity, lateral inflow from the land surface (computed with Noah-MP) and gage measurements (from USGS NWIS) for a 4-year run (between 2004-01-01 and 2007-12-30).
-
-[![10.5281/zenodo.16565](https://zenodo.org/badge/doi/10.5281/zenodo.16565.svg)](http://dx.doi.org/10.5281/zenodo.16565)
-
-### SIM-France Domain
-Download all input and output data from David et al. (2011, HP). These include SIM-France river network connectivity, inflow from the land surface (computed with ISBA), bilateral inflow from groundwater (computed with MODCOU) for a 10-year run (between 1995-08-01 and 2005-07-31).
-
-[![10.5281/zenodo.30228](https://zenodo.org/badge/doi/10.5281/zenodo.30228.svg)](http://dx.doi.org/10.5281/zenodo.30228)
-
-## RAPID Scripts
-
-Additional scripts and tools to help with RAPID execution are available in the [RAPID repository](https://github.com/c-h-david/rapid2/) which contains the most current helper scripts and utilities.
-
-## Further Documentation
-
-For detailed tutorials and advanced usage, see the [Tutorials](../tutorials/training.md) section.
-
-## Need Help?
-
-If you need information on using RAPID that is not included here or in the RAPID publications, please don't hesitate to [ask on GitHub](https://github.com/c-h-david/rapid2/issues/new/choose) as feedback is enthusiastically appreciated and new users welcome!
+[URL_ZENODO]: https://doi.org/10.5281/zenodo.8248069
