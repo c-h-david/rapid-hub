@@ -7,25 +7,8 @@ nav:
   - Home: index.md
   - User Guide:
       - Quick Start: user-guide/quick-start.md
-      - Overview: user-guide/getting-started/overview.md
-      - Requirements: user-guide/getting-started/requirements.md
-      - Installation: user-guide/getting-started/installation.md
-      - Running: user-guide/getting-started/running.md
-      - Training: user-guide/tutorials/training.md
-      - Documents: user-guide/tutorials/documents.md
-  - Developer Guide:
-      - Architecture: developer-guide/architecture.md
-      - Code: developer-guide/code.md
-      - Contributing: developer-guide/contributing.md
-      - Testing: developer-guide/testing.md
-  - About:
-      - Media: about/media.md
-      - Publications: about/publications.md
-      - Acknowledgments: about/acknowledgments.md
-      - Citing: about/citing.md
-      - Intercomparison: about/intercomparison.md
-      - Getting Help: about/getting-help.md
-      - Contact: about/contact.md
+      - Mississippi Tutorial: user-guide/mississippi-tutorial.md
+      - Migrating to RAPID2: user-guide/migrating-to-rapid2.md
 
 theme:
   name: material

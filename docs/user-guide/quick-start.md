@@ -1,54 +1,70 @@
-# Quick Start
+# Quick Start: The RAPID2 Sandbox
 
-An accelerated guide to quickly understand, download, install, use, and apply RAPID to a sample use case.
+Get RAPID2 running in under five minutes using our synthetic Sandbox environment. This tutorial covers installation, running a baseline simulation, and plotting the resulting hydrographs.
 
-## Quick Install
+---
 
-Get RAPID running in 3 simple steps.
+## 1. Installation
+
+RAPID2 is a modern Python package. To install it, we highly recommend using a Python 3.11 virtual environment to avoid dependency conflicts, then installing via `pip`:
 
 ```bash
-git clone https://github.com/c-h-david/rapid2
-cd rapid2/
-pip3 install .
+python3 -m venv rapid_env
+source rapid_env/bin/activate
+pip install rapid2
 ```
 
-## Quick Use Case
+## 2. Get the Sandbox Data
 
-Download the sandbox for RAPID.
+RAPID2 uses a synthetic 5-reach river network for testing, hosted on Zenodo (DOI: 10.5281/zenodo.17298742). Since we installed via `pip`, we can fetch and run the Sandbox download script directly from the repository source:
 
 ```bash
-cd tst/
+mkdir tst
+cd tst
+wget [https://raw.githubusercontent.com/c-h-david/rapid2/main/tst/tst_dwnl_Sandbox.sh](https://raw.githubusercontent.com/c-h-david/rapid2/main/tst/tst_dwnl_Sandbox.sh)
+chmod +x tst_dwnl_Sandbox.sh
 ./tst_dwnl_Sandbox.sh
 cd ..
 ```
 
-> Or get it manually at
->
-> [![10.5281/zenodo.17298742](https://zenodo.org/badge/doi/10.5281/zenodo.17298742.svg)](https://doi.org/10.5281/zenodo.17298742)
+Once the download completes, you will notice two main file types in your new `input/Sandbox/` directory:
 
+* **`.parquet` files:** Fast, columnar data files storing your network connectivity (`con_Sandbox.parquet`) and Muskingum routing parameters (`kpr`, `xpr`).
+* **`.nc4` files:** NetCDF4 files storing multidimensional scientific data, such as your external inflows (`Qex`) and initial states (`Q00`).
 
-## Quick Run
+## 3. Run the Model
 
-Run RAPID.
+RAPID2 uses a YAML configuration file (a "namelist") to map all your inputs, outputs, and routing time steps. Execute the model by pointing the CLI to the Sandbox namelist you just downloaded:
 
 ```bash
-rapid2 --namelist input/Sandbox/namelist_Sandbox.yml
+rapid2 --namelist input/Sandbox/nml_Sandbox.yml
 ```
 
-That's it!
+When the progress bar finishes, RAPID2 will have generated your simulated outflow data (`Qou`) and your final state file (`Qfi`) in the `output/Sandbox/` directory.
 
-## Viewing Results
+## 4. Visualize the Results
 
-After a successful run, your output files will be written to the paths specified in the namelist configuration. For the Sandbox example, check:
+To see how our simulated outflow compares to observed data, we will use two bundled RAPID2 CLI tools.
 
-- `./output/Sandbox/Qout_Sandbox_19700101_19700110.nc4` - discharge time series
-- `./output/Sandbox/Qfinal_Sandbox_19700101_19700110.nc4` - final state for model restart
+First, sub-sample your high-resolution output (`Qou`) to match the daily (86,400 seconds) cadence of our observations, creating a Model Equivalent (`Qme`):
 
-## Need More?
+```bash
+subsampleqout \
+  -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_TR_tst.nc4 \
+  -obs input/Sandbox/obs_Sandbox.parquet \
+  -dtO 86400 \
+  -Qme output/Sandbox/Qme_Sandbox_tst.nc4
+```
 
-For step-by-step setup details, see the [User Guide](getting-started/installation.md).
+Next, generate SVG plots comparing the model equivalent (`Qme`) to the true observations (`Qob`):
 
-You can also find additional information and join the conversation in our [GitHub Discussions](https://github.com/c-h-david/rapid2/discussions).
-We warmly welcome new users and greatly value your feedback!
+```bash
+hydrographs \
+  -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
+  -Qme output/Sandbox/Qme_Sandbox_tst.nc4 \
+  -max 100 \
+  -hyd output/Sandbox/hyd.svg
+```
 
-For short-term exchanges (messages deleted after 6 months), you can connect through the unofficial user community Slack channel.
+Check your `output/Sandbox/` folder for the newly generated `.svg` files—you have successfully run and visualized your first RAPID2 simulation!
+
