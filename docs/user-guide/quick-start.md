@@ -16,25 +16,21 @@ pip install rapid2
 
 ## 2. Get the Sandbox Data
 
-RAPID2 uses a synthetic 5-reach river network for testing, hosted on Zenodo (DOI: 10.5281/zenodo.17298742). Since we installed via `pip`, we can fetch and run the Sandbox download script directly from the repository source:
+RAPID2 uses a synthetic 5-reach river network for testing, hosted on Zenodo (DOI: 10.5281/zenodo.21085813). Since we installed via `pip`, the Sandbox download tool is automatically available in your terminal:
 
 ```bash
-mkdir tst
-cd tst
-wget [https://raw.githubusercontent.com/c-h-david/rapid2/main/tst/tst_dwnl_Sandbox.sh](https://raw.githubusercontent.com/c-h-david/rapid2/main/tst/tst_dwnl_Sandbox.sh)
-chmod +x tst_dwnl_Sandbox.sh
-./tst_dwnl_Sandbox.sh
-cd ..
+dsandbox
 ```
 
-Once the download completes, you will notice two main file types in your new `input/Sandbox/` directory:
+Once the download completes, you will notice three main file types populated across your new `input/Sandbox/` and `output/Sandbox/` directories:
 
-* **`.parquet` files:** Fast, columnar data files storing your network connectivity (`con_Sandbox.parquet`) and Muskingum routing parameters (`kpr`, `xpr`).
-* **`.nc4` files:** NetCDF4 files storing multidimensional scientific data, such as your external inflows (`Qex`) and initial states (`Q00`).
+* **`.parquet` files:** Fast, columnar data files storing your network connectivity (`con`) and Muskingum routing parameters (`kpr`, `xpr`).
+* **`.yml` files:** YAML configuration files (namelists) that instruct the model on which inputs, outputs, and parameters to use (`nml`).
+* **`.nc4` files:** NetCDF4 files storing multidimensional scientific data, such as your external inflows (`Qex`), initial states (`Q00`), outputs (`Qou`), and final states (`Qfi`).
 
 ## 3. Run the Model
 
-RAPID2 uses a YAML configuration file (a "namelist") to map all your inputs, outputs, and routing time steps. Execute the model by pointing the CLI to the Sandbox namelist you just downloaded:
+RAPID2 uses a YAML configuration file (a "namelist"). Execute the model by pointing the CLI to the Sandbox namelist you just downloaded:
 
 ```bash
 rapid2 --namelist input/Sandbox/nml_Sandbox.yml
@@ -46,7 +42,7 @@ When the progress bar finishes, RAPID2 will have generated your simulated outflo
 
 To see how our simulated outflow compares to observed data, we will use two bundled RAPID2 CLI tools.
 
-First, sub-sample your high-resolution output (`Qou`) to match the daily (86,400 seconds) cadence of our observations, creating a Model Equivalent (`Qme`):
+First, spatially and temporally sub-sample your high-resolution output (`Qou`) to isolate the river reaches where observations exist (`obs`) and match their daily (`86400` seconds) cadence, creating a Model Equivalent (`Qme`) to observations:
 
 ```bash
 subsampleqout \
