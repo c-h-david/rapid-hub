@@ -6,6 +6,7 @@ site_author: RAPID Development Team
 nav:
   - Home: index.md
   - User Guide:
+      - Understanding Files: user-guide/understanding-files.md
       - Quick Start: user-guide/quick-start-sandbox.md
       - Mississippi Tutorial: user-guide/tutorial-mississippi.md
       - Migrating to RAPID2: user-guide/migrating-to-rapid2.md
