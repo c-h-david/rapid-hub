@@ -7,10 +7,14 @@ Get RAPID2 running in under five minutes using our synthetic Sandbox environment
 RAPID2 is a modern Python package. To install it, we highly recommend using a Python 3.11 virtual environment to avoid dependency conflicts, then installing via `pip`:
 
 ```bash
-python3.11 -m venv rapid_env
+python3 -m venv rapid_env
 source rapid_env/bin/activate
 pip install rapid2
+rapid2 --version
 ```
+
+> This tutorial was written for `rapid2 2.0.0b3`. If you've installed a previous version of RAPID2, consider doing `pip install --upgrade rapid2`.
+> RAPID2 was designed for `python3.11` but users have had success with `3.12`, `3.13`, and `3.14`. You can check the version you have installed with `python --version`.
 
 ## 2. Get the Sandbox Data
 
