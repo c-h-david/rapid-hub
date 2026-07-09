@@ -67,6 +67,9 @@ plugins:
   - search:
       lang: en
   - macros
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
 
 markdown_extensions:
   - admonition
