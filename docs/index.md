@@ -10,7 +10,7 @@ hide:
 
 <!-- pyml disable-num-lines 2 no-inline-html -->
 <!-- pyml disable-num-lines 1 line-length -->
-<img src="https://raw.githubusercontent.com/c-h-david/rapid2/main/img/icon_rapid_network.svg" alt="RAPID network icon" width="128"/>
+<img src="docs/imgs/icon_rapid_network.svg" alt="RAPID network icon" width="128" height="128"/>
 
 Advanced river network modeling software for estimating water flow across
 thousands of river reaches. Efficient matrix-based computations. Adaptable to
