@@ -56,7 +56,7 @@ This guide provides a quick way to build and serve the documentation website loc
 
 3. **Install dependencies**
    ```bash
-   pip install mkdocs mkdocs-material mkdocs-macros-plugin
+   pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-jupyter
    ```
 
 #### Alternative Setup with UV (Optional)
@@ -70,7 +70,7 @@ If you prefer using UV package manager:
 
 2. **Install dependencies using UV**
    ```bash
-   uv pip install mkdocs mkdocs-material mkdocs-macros-plugin
+   uv pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-jupyter
    ```
 
 ### Run Instructions
