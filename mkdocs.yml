@@ -14,7 +14,7 @@ nav:
 theme:
   name: material
   logo: imgs/icon_rapid_network.svg
-  favicon: imgs/rapid-logo.png
+  favicon: imgs/icon_rapid_network.svg
   palette:
     - scheme: default
       primary: light blue
