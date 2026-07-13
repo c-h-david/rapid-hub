@@ -1,0 +1,5 @@
+# Environment for running RAPID notebooks on Binder (mybinder.org).
+# rapid2 pulls in the scientific stack transitively: numpy, scipy, netCDF4, pyyaml.
+# The >=beta specifier lets pip install the current pre-release of rapid2.
+rapid2>=2.0.0b1
+matplotlib
