@@ -9,6 +9,8 @@ nav:
       - Quick Start: user-guide/quick-start-sandbox.md
       - Understanding Files: user-guide/understanding-files.md
       - Migrating to RAPID2: user-guide/migrating-to-rapid2.md
+      - Examples:
+        - Mississippi Basin: user-guide/examples/tutorial-mississippi.ipynb
 
 theme:
   name: material
