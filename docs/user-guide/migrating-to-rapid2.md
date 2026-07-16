@@ -4,15 +4,29 @@ Welcome to RAPID2! This guide is designed for veteran users who are upgrading th
 
 ## Why the Change?
 
-RAPID2 represents a massive architectural shift from legacy Fortran to a modern Python 3 framework. Because of this, it can now be easily installed using a simple `pip` command rather than relying on Docker images:
+### Embracing Modern Standards
+
+RAPID2 represents a massive architectural shift from legacy Fortran to a modern Python 3 framework. This redesign makes RAPID2 perfectly suited for modern cloud infrastructure, allowing you to run routing models in close proximity to massive NASA data production and archiving centers. However, if your workflows still rely on traditional High-Performance Computing (HPC) environments, rest assured that RAPID2 runs there just as smoothly.
+
+Because of this architectural shift, native installation is finally a breeze! While we still proudly publish Docker images, you can now bypass the complex Fortran, PETSc, and MPI setup of the past with a simple pip command:
 
 ```bash
 pip install rapid2
 ```
 
-As part of this modernization, RAPID2 has transitioned its static input files (such as connectivity, basin IDs, and Muskingum parameters) from standard Comma Separated Values (`.csv`) to Apache Parquet (`.parquet`). This shift drastically improves read speeds, enforces strict memory typing, and reduces file sizes for massive river networks.
+As part of this modernization, RAPID2 has transitioned its static input files (such as connectivity, basin IDs, and Muskingum parameters) from standard Comma Separated Values (`.csv`) to Apache Parquet (`.parquet`). This shift drastically improves read speeds, enforces strict memory typing, and reduces file sizes for massive river networks. Similarly, timeseries observations have migrated from legacy CSVs to highly efficient netCDF files. This introduces the concept of a "model equivalent" to seamlessly align observed and modeled data, streamlining goodness-of-fit calculations and hydrograph plotting.
 
-The legacy Fortran-based `rapid` has officially reached its End of Life (EOL). As of its 20-year anniversary on 26 January 2026, the original codebase was sunset and is no longer actively developed, maintained, or supported. All future development has transitioned to the new Python 3 framework, which is officially hosted on [GitHub](https://github.com/c-h-david/rapid2).
+### What's New to Get Excited About?
+This transition goes beyond changing programming languages—it completely transforms what you can accomplish:
+
+- **A Unified Ecosystem:** The legacy RAPID routing model and the Reproducible Routing Rituals (RRR) preprocessing toolbox have been seamlessly merged into a single, cohesive RAPID2 package.
+- **Massive Code Condensation:** By leveraging Python's modern scientific stack, we've shrunk the codebase from a combined ~37,000 lines of code across RAPID1 (~24,000 lines, ~871,000 characters) and RRR (~13,000 lines) down to a lean, highly maintainable ~8,500 lines (~293,000 characters) in RAPID2.
+- **Advanced Data Assimilation & Bias Correction:** We are fixing and refining the early developmental versions of data assimilation that were present in RAPID1. Furthermore, RAPID2 introduces entirely new Bias Correction capabilities that were never available in the legacy model!
+- **A Developer-First Experience:** RAPID2 is drastically easier to test and contribute to. We've introduced crystal-clear guidelines on syntax, nomenclature, contribution mechanisms, coding style, and strict linting standards. Plus, we've built a small yet powerful synthetic "Sandbox" dataset that can be instantly leveraged for full-blown continuous integration testing!
+
+### Passing the Torch to RAPID2
+
+The legacy Fortran-based `rapid` has officially reached its End of Life (EOL). As of its 20-year anniversary on 26 January 2026, the original codebase was sunset and is no longer actively developed, maintained, or supported. All future development has transitioned to the new Python 3 framework of `rapid2`, which is officially hosted on [GitHub](https://github.com/c-h-david/rapid2).
 
 ## 1. Convert Legacy Static Files
 
