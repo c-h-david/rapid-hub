@@ -8,6 +8,10 @@ hide:
 
 ## Routing Application for Programmed Integration of Discharge
 
+<!-- pyml disable-num-lines 2 no-inline-html -->
+<!-- pyml disable-num-lines 1 line-length -->
+<img src="imgs/icon_rapid_network.svg" alt="RAPID network icon" width="128" height="128"/>
+
 Advanced river network modeling software for estimating water flow across
 thousands of river reaches. Efficient matrix-based computations. Adaptable to
 any dentritic river network with basic connectivity information.

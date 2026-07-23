@@ -7,7 +7,10 @@
 
 [![MkDocs](https://img.shields.io/badge/docs-MkDocs-blue)](https://www.mkdocs.org/) [![Material for MkDocs](https://img.shields.io/badge/theme-Material-blue)](https://squidfunk.github.io/mkdocs-material/) [![SLIM](https://img.shields.io/badge/Best%20Practices%20from-SLIM-blue)](https://nasa-ammos.github.io/slim/)
 
-![RAPID Documentation Website](docs/imgs/rapid-logo.png)
+<!-- pyml disable-num-lines 2 no-inline-html -->
+<!-- pyml disable-num-lines 1 line-length -->
+<img src="docs/imgs/icon_rapid_network.svg" alt="RAPID network icon" width="128" height="128"/>
+
 
 This repository contains the source code for the RAPID documentation website, built with MkDocs and Material theme. The website provides comprehensive documentation for RAPID, an advanced river network routing model used for high-performance computing of water flow and volume across thousands of river reaches.
 
@@ -56,7 +59,7 @@ This guide provides a quick way to build and serve the documentation website loc
 
 3. **Install dependencies**
    ```bash
-   pip install mkdocs mkdocs-material mkdocs-macros-plugin
+   pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-jupyter
    ```
 
 #### Alternative Setup with UV (Optional)
@@ -70,7 +73,7 @@ If you prefer using UV package manager:
 
 2. **Install dependencies using UV**
    ```bash
-   uv pip install mkdocs mkdocs-material mkdocs-macros-plugin
+   uv pip install mkdocs mkdocs-material mkdocs-macros-plugin mkdocs-jupyter
    ```
 
 ### Run Instructions
