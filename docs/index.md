@@ -17,7 +17,7 @@ thousands of river reaches. Efficient matrix-based computations. Adaptable to
 any dentritic river network with basic connectivity information.
 
 [Quick Start](user-guide/quick-start-sandbox.md){ .md-button .md-button--primary }
-[Tutorial](user-guide/tutorial-mississippi.md){ .md-button }
+[Tutorial](user-guide/examples/tutorial-mississippi.ipynb){ .md-button }
 
 ---
 

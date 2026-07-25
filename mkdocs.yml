@@ -7,6 +7,7 @@ nav:
   - Home: index.md
   - User Guide:
       - Quick Start: user-guide/quick-start-sandbox.md
+      - Bias Correction: user-guide/bias-correction-sandbox.md
       - Understanding Files: user-guide/understanding-files.md
       - Migrating to RAPID2: user-guide/migrating-to-rapid2.md
       - Examples:
