@@ -14,7 +14,7 @@ ltir_scl \
   -bas input/Sandbox/bas_Sandbox_ascend.parquet \
   -Qex input/Sandbox/Qex_Sandbox_19700101_19700110_FG.nc4 \
   -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
-  -scl output/Sandbox/scl_Sandbox.parquet
+  -scl input/Sandbox/scl_Sandbox_tst.parquet
 ```
 
 ## 2. Apply Bias Correction to External Inflow
