@@ -61,7 +61,7 @@ hydrographs \
   -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
   -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4 \
   -max 100 \
-  -hyd output/Sandbox/hyd.svg
+  -hyd output/Sandbox/hyd_Qou_OL.svg
 ```
 
 Check your `output/Sandbox/` folder for the newly generated `.svg` files—you have successfully run and visualized your first RAPID2 simulation!

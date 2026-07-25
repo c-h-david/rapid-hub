@@ -24,8 +24,8 @@ Now, we apply the computed scalars to the flawed First Guess inflow (`Qex_..._FG
 ```bash
 ltir_cor \
   -prv input/Sandbox/Qex_Sandbox_19700101_19700110_FG.nc4 \
-  -scl output/Sandbox/scl_Sandbox.parquet \
-  -now output/Sandbox/Qex_Sandbox_19700101_19700110_BC.nc4
+  -scl input/Sandbox/scl_Sandbox.parquet \
+  -now input/Sandbox/Qex_Sandbox_19700101_19700110_BC_tst.nc4
 ```
 
 ## 3. Run the Bias-Corrected Simulation
@@ -44,7 +44,7 @@ To compare our corrected model output with the true observations, we need to spa
 
 ```bash
 subsampleqout \
-  -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_BC_tst.nc4 \
+  -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_BC.nc4 \
   -obs input/Sandbox/obs_Sandbox.parquet \
   -dtO 86400 \
   -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_BC_tst.nc4
@@ -57,9 +57,9 @@ Finally, let's plot the hydrographs to see how well the bias correction worked! 
 ```bash
 hydrographs \
   -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
-  -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_BC_tst.nc4 \
+  -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_BC.nc4 \
   -max 100 \
-  -hyd output/Sandbox/hyd_BC.svg
+  -hyd output/Sandbox/hyd_Qou_BC.svg
 ```
 
 Check your `output/Sandbox/` folder for the newly generated `.svg` files (e.g., `hyd_BC_30.svg` and `hyd_BC_50.svg`). You will see that the red dashed line (model equivalent) now aligns beautifully with the black solid line (observations)!
