@@ -12,6 +12,7 @@ nav:
       - Migrating to RAPID2: user-guide/migrating-to-rapid2.md
       - Examples:
         - Mississippi Basin: user-guide/examples/tutorial-mississippi.ipynb
+        - Choose Your Own Basin: user-guide/examples/tutorial-anyBasin.ipynb
 
 theme:
   name: material
@@ -73,6 +74,7 @@ plugins:
   - mkdocs-jupyter:
       execute: false
       include_source: true
+      no_prompt: True
 
 markdown_extensions:
   - admonition
