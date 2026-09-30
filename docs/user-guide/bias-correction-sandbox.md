@@ -4,9 +4,9 @@ This tutorial demonstrates how to correct biases in external inflows using the
 Long-Term Inverse Routing (LTIR) methodology in RAPID2.
 
 > **Prerequisites:** We assume you have already completed the Quick Start
-> tutorial (`quick-start.md`). Your Python virtual environment should be
-> activated, and the Sandbox data must already be downloaded into the
-> `input/Sandbox/` and `output/Sandbox/` directories.
+> tutorial (`quick-start-sandbox.md`). Your Python virtual environment
+> should be activated, and the Sandbox data must already be downloaded
+> into the `input/Sandbox/` and `output/Sandbox/` directories.
 >
 > This tutorial was written for `rapid2 2.0.0b4`.
 
