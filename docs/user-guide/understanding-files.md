@@ -69,3 +69,6 @@ A typical namelist for a RAPID2 run contains the following required keys:
 | `bas_pqt` | `Filepath` | Path to your simulated basin subset Parquet file. |
 | `IS_dtR` | `Integer` | The routing time step in seconds (e.g., `900`). |
 | `Qou_ncf`, `Qfi_ncf` | `Filepath` | Paths where RAPID2 will save your generated outputs. |
+| `Qob_ncf` | `Filepath` | *(Optional)* Path to observed discharge NetCDF for Data Assimilation. |
+| `ZS_lkm_cov` | `Float` | *(Required if Qob_ncf is used)* Data Assimilation parameter for spatial correlation e-folding length scale. |
+| `ZS_scl_inf`, `ZS_scl_sdv` | `Float` | *(Required if Qob_ncf is used)* Currently inactive in v2.0.0b4; set to `0.0`. |

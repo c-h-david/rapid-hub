@@ -63,3 +63,5 @@ hydrographs \
 ```
 
 Check your `output/Sandbox/` folder for the newly generated `.svg` files (e.g., `hyd_BC_30.svg` and `hyd_BC_50.svg`). You will see that the red dashed line (model equivalent) now aligns beautifully with the black solid line (observations)!
+
+> **Explore Further**: Now that you've mastered Bias Correction, try running the new Data Assimilation (DA).

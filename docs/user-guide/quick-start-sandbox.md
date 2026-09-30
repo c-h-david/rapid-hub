@@ -13,7 +13,7 @@ pip install rapid2
 rapid2 --version
 ```
 
-> This tutorial was written for `rapid2 2.0.0b3`. If you've installed a previous version of RAPID2, consider doing `pip install --upgrade rapid2`.
+> This tutorial was written for `rapid2 2.0.0b4`. If you've installed a previous version of RAPID2, consider doing `pip install --upgrade rapid2`.
 > RAPID2 was designed for `python3.11` but users have had success with `3.12`, `3.13`, and `3.14`. You can check the version you have installed with `python --version`.
 
 ## 2. Get the Sandbox Data
