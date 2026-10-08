@@ -1,4 +1,4 @@
-# Understanding RAPID2 Functions
+# Understanding the RAPID2 Interface
 
 RAPID2 provides a unified set of Python functions and a corresponding
 Command Line Interface (CLI) dispatcher to streamline routing workflows.
