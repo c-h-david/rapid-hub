@@ -39,19 +39,19 @@ data, streamlining goodness-of-fit calculations and hydrograph plotting.
 This transition goes beyond changing programming languages—it completely
 transforms what you can accomplish:
 
-* **A Unified Ecosystem:** The legacy RAPID routing model and the Reproducible
+- **A Unified Ecosystem:** The legacy RAPID routing model and the Reproducible
 Routing Rituals (RRR) preprocessing toolbox have been seamlessly merged
 into a single, cohesive RAPID2 package.
-* **Massive Code Condensation:** By leveraging Python's modern scientific
+- **Massive Code Condensation:** By leveraging Python's modern scientific
 stack, we've shrunk the codebase from a combined ~37,000 lines of code
 across RAPID1 (~24,000 lines, ~871,000 characters) and RRR (~13,000 lines)
 down to a lean, highly maintainable ~8,500 lines (~293,000 characters) in
 RAPID2.
-* **Advanced Data Assimilation & Bias Correction:** RAPID2 features a
+- **Advanced Data Assimilation & Bias Correction:** RAPID2 features a
 substantially modernized Kalman Filter Data Assimilation framework and
 introduces entirely new Bias Correction (Long-Term Inverse Routing)
 capabilities, neither of which are available in the legacy model!
-* **A Developer-First Experience:** RAPID2 is drastically easier to test and
+- **A Developer-First Experience:** RAPID2 is drastically easier to test and
 contribute to. We've introduced crystal-clear guidelines on syntax,
 nomenclature, contribution mechanisms, coding style, and strict linting
 standards. Plus, we've built a small yet powerful synthetic "Sandbox"

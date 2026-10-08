@@ -35,19 +35,19 @@ topology and routing parameters of your river network:
 
 **Dataset Descriptions:**
 
-* **Connectivity**: Gives the relationship between upstream and downstream
+- **Connectivity**: Gives the relationship between upstream and downstream
   reaches in the full network.
-* **k Parameter**: The Muskingum time parameter `k` (seconds) for each
+- **k Parameter**: The Muskingum time parameter `k` (seconds) for each
   reach of the full network.
-* **x Parameter**: The Muskingum non-dimensional parameter `x` for each
+- **x Parameter**: The Muskingum non-dimensional parameter `x` for each
   reach of the full network.
-* **Basin Subset**: Defines the simulated subset of the full routing
+- **Basin Subset**: Defines the simulated subset of the full routing
   network; sorted from upstream to downstream.
-* **Obs. Subset**: Defines the observed subset of the full routing
+- **Obs. Subset**: Defines the observed subset of the full routing
   network (e.g., stream gauges).
-* **Coordinates**: Geospatial longitude and latitude representing each
+- **Coordinates**: Geospatial longitude and latitude representing each
   river reach.
-* **Coupling**: Maps the Land Surface Model (LSM) grid to river
+- **Coupling**: Maps the Land Surface Model (LSM) grid to river
     catchments and in the network.
 
 > **Tip:** If you want to peak inside one of these files using a command-line
@@ -85,15 +85,15 @@ variables you will interact with:
 
 **Dataset Descriptions:**
 
-* **Ext. Inflow**: The forcing data (m³/s) entering the network.
-* **Outflow**: The primary routing results (m³/s) exiting each reach.
-* **Init. State**: An instantaneous snapshot of the water in the network
+- **Ext. Inflow**: The forcing data (m³/s) entering the network.
+- **Outflow**: The primary routing results (m³/s) exiting each reach.
+- **Init. State**: An instantaneous snapshot of the water in the network
   at the exact start of a simulation.
-* **Final State**: An instantaneous snapshot of the water in the network
+- **Final State**: An instantaneous snapshot of the water in the network
   at the exact end of a simulation.
-* **Observations**: True observed discharge (m³/s), used for validation,
+- **Observations**: True observed discharge (m³/s), used for validation,
   bias correction, or data assimilation.
-* **Mod. Equival.**: The simulated discharge sub-sampled in space and time
+- **Mod. Equival.**: The simulated discharge sub-sampled in space and time
   to match the observations.
 
 > **Tip:** Because NetCDF4 files are multi-dimensional, they do not print
@@ -132,17 +132,17 @@ A typical namelist for a RAPID2 run contains the following required keys:
 
 **Key Descriptions:**
 
-* **`Qex_ncf`, `Q00_ncf`**: Paths to your input NetCDF files (inflow and
+- **`Qex_ncf`, `Q00_ncf`**: Paths to your input NetCDF files (inflow and
   initial state).
-* **`con_pqt`, `kpr_pqt`, `xpr_pqt`**: Paths to your static network
+- **`con_pqt`, `kpr_pqt`, `xpr_pqt`**: Paths to your static network
   Parquet files.
-* **`bas_pqt`**: Path to your simulated basin subset Parquet file.
-* **`IS_dtR`**: The routing time step in seconds (e.g., `900`).
-* **`Qou_ncf`, `Qfi_ncf`**: Paths where RAPID2 will save your generated
+- **`bas_pqt`**: Path to your simulated basin subset Parquet file.
+- **`IS_dtR`**: The routing time step in seconds (e.g., `900`).
+- **`Qou_ncf`, `Qfi_ncf`**: Paths where RAPID2 will save your generated
   outputs.
-* **`Qob_ncf`**: *(Optional)* Path to observed discharge NetCDF for Data
+- **`Qob_ncf`**: *(Optional)* Path to observed discharge NetCDF for Data
   Assimilation.
-* **`ZS_lkm_cov`**: *(Required if Qob_ncf is used)* Data Assimilation
+- **`ZS_lkm_cov`**: *(Required if Qob_ncf is used)* Data Assimilation
   parameter for spatial correlation e-folding length scale.
-* **`ZS_scl_inf`, `ZS_scl_sdv`**: *(Required if Qob_ncf is used)* Currently
+- **`ZS_scl_inf`, `ZS_scl_sdv`**: *(Required if Qob_ncf is used)* Currently
   inactive in `v2.0.0b4`; set to `0.0`.

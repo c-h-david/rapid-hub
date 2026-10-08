@@ -40,13 +40,13 @@ dsandbox
 Once the download completes, you will notice three main file types populated
 across your new `input/Sandbox/` and `output/Sandbox/` directories:
 
-* **`.parquet` files:** Fast, columnar data files storing network connectivity
+- **`.parquet` files:** Fast, columnar data files storing network connectivity
   (`con`), Muskingum routing parameters (`kpr`, `xpr`), among other "static"
   files.
-* **`.yml` files:** YAML configuration files (namelists) that instruct the
+- **`.yml` files:** YAML configuration files (namelists) that instruct the
   model on which inputs and parameters to use and which outputs to create
   (`nml`).
-* **`.nc4` files:** NetCDF4 files storing multidimensional scientific data,
+- **`.nc4` files:** NetCDF4 files storing multidimensional scientific data,
   such as your external external inflows (`Qex`), initial discharge states
   (`Q00`), discharge outputs (`Qou`), final discharge states (`Qfi`), model
   equivalent to observations (`Qme`), or observations (`Qob`).

@@ -69,7 +69,8 @@ subsampleqout \
 ## 5. Visualize the Improvement
 
 Finally, let's plot the hydrographs to see how well the bias correction worked!
-We'll compare the new Model Equivalent (`Qme`) to the True observations (`Qob`):
+We'll compare the new Model Equivalent (`Qme`) to the True observations
+(`Qob`):
 
 ```bash
 hydrographs \
