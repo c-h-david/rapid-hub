@@ -68,7 +68,7 @@ by comparing the high-resolution `Qou` files directly:
 
 ```bash
 hydrographs \
-  -Qob input/Sandbox/Qou_Sandbox_19700101_19700110_TR.nc4 \
+  -Qob output/Sandbox/Qou_Sandbox_19700101_19700110_TR.nc4 \
   -Qme output/Sandbox/Qou_Sandbox_19700101_19700110_DA_tst.nc4 \
   -max 100 \
   -hyd output/Sandbox/hyd_Qou_DA.svg
