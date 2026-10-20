@@ -92,7 +92,7 @@ or on the
  width="70"
 />
 
-RAPID is used for global hydrologic intelligence.
+RAPID is used for global hydrologic information.
 Read more in the
 [research paper](https://doi.org/10.1111/1752-1688.12456)
 or in the
