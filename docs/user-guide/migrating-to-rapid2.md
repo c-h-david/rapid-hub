@@ -3,7 +3,7 @@
 Welcome to RAPID2! This guide is designed for veteran users who are upgrading
 their legacy RAPID datasets and workflows to the new RAPID2 standards.
 
-> This note was written for `rapid2 2.0.0b4`.
+> This note was written for `rapid2 2.0.0b5`.
 
 ## Why the Change?
 
@@ -79,7 +79,7 @@ river IDs for the network, while the other parameters are optional but
 recommended.
 
 ```bash
-rapid1to2 \
+rapid2 v1v2 static \
     --connectivity input/Tutorial/rapid_connect_pfaf_74.csv \
     --basin input/Tutorial/riv_bas_id_pfaf_74_topo.csv \
     --k_parameter input/Tutorial/k_pfaf_74_nrm.csv \
@@ -101,7 +101,7 @@ the time step duration from the file metadata and convert the volumes into
 rates for you.
 
 ```bash
-m3rivtoqext \
+rapid2 v1v2 inflow \
     --external_volume input/Tutorial/m3_riv_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4 \
     --external_inflow input/Tutorial/Qext_pfaf_74_GLDAS_2.1_VIC_2010-01.nc4
 
@@ -148,7 +148,7 @@ Once your namelist is updated, you are ready to run the model using the
 standard RAPID2 execution command:
 
 ```bash
-rapid2 --namelist input/Tutorial/namelist_Tutorial.yml
+rapid2 core run --namelist input/Tutorial/namelist_Tutorial.yml
 
 ```
 

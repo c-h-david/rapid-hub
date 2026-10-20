@@ -17,7 +17,7 @@ pip install rapid2
 rapid2 --version
 ```
 
-> This tutorial was written for `rapid2 2.0.0b4`. If you've installed a
+> This tutorial was written for `rapid2 2.0.0b5`. If you've installed a
 > previous version of RAPID2, consider doing `pip install --upgrade rapid2`.
 >
 > RAPID2 was designed for `python3.11` but users have had success with `3.12`,
@@ -34,7 +34,7 @@ The Sandbox download tool should automatically be available in your terminal
 from the installation via `pip`:
 
 ```bash
-dsandbox
+rapid2 pull sandbox
 ```
 
 Once the download completes, you will notice three main file types populated
@@ -57,7 +57,7 @@ RAPID2 uses a YAML configuration file (a "namelist"). Execute the model by
 pointing the CLI to the Sandbox namelist you just downloaded:
 
 ```bash
-rapid2 --namelist input/Sandbox/nml_Sandbox_OL.yml
+rapid2 core run --namelist input/Sandbox/nml_Sandbox_OL.yml
 ```
 
 When the progress bar finishes, RAPID2 will have generated your new simulated
@@ -75,7 +75,7 @@ daily (`86400` seconds) cadence, creating a Model Equivalent (`Qme`) to
 observations:
 
 ```bash
-subsampleqout \
+rapid2 prep sample \
   -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_OL_tst.nc4 \
   -obs input/Sandbox/obs_Sandbox.parquet \
   -dtO 86400 \
@@ -87,7 +87,7 @@ observations (`Qob`), setting the maximum value of discharge on the vertical
 axis (`125`):
 
 ```bash
-hydrographs \
+rapid2 eval graph \
   -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
   -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4 \
   -max 125 \

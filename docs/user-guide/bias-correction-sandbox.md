@@ -8,7 +8,7 @@ Long-Term Inverse Routing (LTIR) methodology in RAPID2.
 > should be activated, and the Sandbox data must already be downloaded
 > into the `input/Sandbox/` and `output/Sandbox/` directories.
 >
-> This tutorial was written for `rapid2 2.0.0b4`.
+> This tutorial was written for `rapid2 2.0.0b5`.
 
 ## 1. Calculate the Scaling Factors
 
@@ -17,7 +17,7 @@ flawed external inflow and our "True" (TR) observations. We'll use the
 `ltir_scl` tool to generate a scaling parameter file (`scl_Sandbox.parquet`):
 
 ```bash
-ltir_scl \
+rapid2 prep ltir \
   -con input/Sandbox/con_Sandbox.parquet \
   -bas input/Sandbox/bas_Sandbox_ascend.parquet \
   -Qex input/Sandbox/Qex_Sandbox_19700101_19700110_FG.nc4 \
@@ -32,7 +32,7 @@ Now, we apply the computed scalars to the flawed First Guess inflow
 (`Qex_..._BC.nc4`) using the `ltir_cor` tool:
 
 ```bash
-ltir_cor \
+rapid2 core ltir \
   -prv input/Sandbox/Qex_Sandbox_19700101_19700110_FG.nc4 \
   -scl input/Sandbox/scl_Sandbox.parquet \
   -now input/Sandbox/Qex_Sandbox_19700101_19700110_BC_tst.nc4
@@ -44,7 +44,7 @@ With our corrected inflow ready, we can run the model using the Bias Correction
 (BC) namelist:
 
 ```bash
-rapid2 --namelist input/Sandbox/nml_Sandbox_BC.yml
+rapid2 core run --namelist input/Sandbox/nml_Sandbox_BC.yml
 ```
 
 > **Note:** This namelist is pre-configured to use the newly generated
@@ -59,7 +59,7 @@ spatially and temporally subsample the high-resolution output (`Qou`) to match
 the daily cadence of our gauges, creating our Model Equivalent (`Qme`):
 
 ```bash
-subsampleqout \
+rapid2 prep sample \
   -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_BC.nc4 \
   -obs input/Sandbox/obs_Sandbox.parquet \
   -dtO 86400 \
@@ -73,7 +73,7 @@ We'll compare the new Model Equivalent (`Qme`) to the True observations
 (`Qob`):
 
 ```bash
-hydrographs \
+rapid2 eval graph \
   -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
   -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_BC.nc4 \
   -max 125 \

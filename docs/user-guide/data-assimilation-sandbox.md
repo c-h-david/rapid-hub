@@ -8,7 +8,7 @@ using the Kalman Filter Data Assimilation methodology in RAPID2.
 > should be activated, and the Sandbox data must already be downloaded
 > into the `input/Sandbox/` and `output/Sandbox/` directories.
 >
-> This tutorial was written for `rapid2 2.0.0b4`.
+> This tutorial was written for `rapid2 2.0.0b5`.
 
 ## 1. Run the Data Assimilation Simulation
 
@@ -17,7 +17,7 @@ Data Assimilation integrates gauge observations dynamically while the routing
 model runs. To execute it, we simply point RAPID2 to the DA namelist:
 
 ```bash
-rapid2 --namelist input/Sandbox/nml_Sandbox_DA.yml
+rapid2 core run --namelist input/Sandbox/nml_Sandbox_DA.yml
 
 ```
 
@@ -33,7 +33,7 @@ observations, we must spatially and temporally subsample the high-resolution
 output (`Qou`) to create our Model Equivalent (`Qme`):
 
 ```bash
-subsampleqout \
+rapid2 prep sample \
   -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_DA_tst.nc4 \
   -obs input/Sandbox/obs_Sandbox.parquet \
   -dtO 86400 \
@@ -47,7 +47,7 @@ Let's plot the daily hydrographs to see how the assimilation performed
 against the daily observations:
 
 ```bash
-hydrographs \
+rapid2 eval graph \
   -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
   -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_DA_tst.nc4 \
   -max 125 \
@@ -67,7 +67,7 @@ will differ slightly from an idealized "True" run. We can visualize this
 by comparing the high-resolution `Qou` files directly:
 
 ```bash
-hydrographs \
+rapid2 eval graph\
   -Qob input/Sandbox/Qou_Sandbox_19700101_19700110_TR.nc4 \
   -Qme output/Sandbox/Qou_Sandbox_19700101_19700110_DA_tst.nc4 \
   -max 100 \

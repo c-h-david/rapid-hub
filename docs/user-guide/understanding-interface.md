@@ -3,7 +3,7 @@
 RAPID2 provides a unified set of Python functions and a corresponding
 Command Line Interface (CLI) dispatcher to streamline routing workflows.
 
-> This note was written in anticipation of a future release.
+> This note was written for `rapid2 2.0.0b5`.
 
 ## Command Reference
 
@@ -29,7 +29,7 @@ For conciseness, we use`import rapid2 as r2` here.
 | `rapid2 prep ltir`     | `r2.prep.ltir`     | Compute LTIR scalars.         |
 | `rapid2 eval graph`    | `r2.eval.graph`    | Generate SVG hydrographs.     |
 | `rapid2 eval cmpncf`   | `r2.eval.cmpncf`   | Compare NetCDF files.         |
-| `rapid2 eval cmppqt`   | *Planned*          | Compare Parquet files.        |
+| `rapid2 eval cmppqt`   | `r2.eval.cmppqt`   | Compare Parquet files.        |
 | `rapid2 v1v2 static`   | `r2.v1v2.static`   | Upgrade RAPID1 CSV to Parquet.|
 | `rapid2 v1v2 inflow`   | `r2.v1v2.inflow`   | Convert volumes to flow rates.|
 | `rapid2 v1v2 namelist` | *Planned*          | Fortran namelist to YAML.     |

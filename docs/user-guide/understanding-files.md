@@ -12,7 +12,7 @@ inflow, and `nml` for namelist).
 Here is a quick guide to what goes inside each dataset and how to reference
 them.
 
-> This note was written for `rapid2 2.0.0b4`.
+> This note was written for `rapid2 2.0.0b5`.
 
 ## 1. Static Network Files (`.parquet`)
 
@@ -115,7 +115,7 @@ variables you will interact with:
 
 The namelist ties it all together. It is a simple YAML text file that acts
 as the control center for your simulation. You pass it to the model using
-`rapid2 --namelist your_namelist.yml`.
+`rapid2 core run --namelist your_namelist.yml`.
 
 A typical namelist for a RAPID2 run contains the following required keys:
 
@@ -145,4 +145,4 @@ A typical namelist for a RAPID2 run contains the following required keys:
 - **`ZS_lkm_cov`**: *(Required if Qob_ncf is used)* Data Assimilation
   parameter for spatial correlation e-folding length scale.
 - **`ZS_scl_inf`, `ZS_scl_sdv`**: *(Required if Qob_ncf is used)* Currently
-  inactive in `v2.0.0b4`; set to `0.0`.
+  inactive in `v2.0.0b5`; set to `0.0`.
