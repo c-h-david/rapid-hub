@@ -10,12 +10,31 @@ RAPID2 is a modern Python package. To install it, we highly recommend using a
 Python 3.11 virtual environment to avoid dependency conflicts, then installing
 via `pip`:
 
-```bash
-python3 -m venv rapid_env
-source rapid_env/bin/activate
-pip install rapid2
-rapid2 --version
-```
+=== "Bash"
+
+    ```bash
+    python3 -m venv rapid_env
+    source rapid_env/bin/activate
+    pip install rapid2
+    rapid2 --version
+    ```
+
+=== "Powershell"
+
+    ```powershell
+    python3 -m venv rapid_env |
+    source rapid_env/bin/activate |
+    pip install rapid2 |
+    rapid2 --version
+    ```
+
+=== "Python"
+
+    ```python
+    # Install rapid2 into virtual environment first using terminal
+    import rapid2
+    print(rapid2.__version__)
+    ```
 
 > This tutorial was written for `rapid2 2.0.0b5`. If you've installed a
 > previous version of RAPID2, consider doing `pip install --upgrade rapid2`.
@@ -33,9 +52,23 @@ detail in
 The Sandbox download tool should automatically be available in your terminal
 from the installation via `pip`:
 
-```bash
-rapid2 pull sandbox
-```
+=== "Bash"
+
+    ```bash
+    rapid2 pull sandbox
+    ```
+
+=== "Powershell"
+
+    ```powershell
+    rapid2 pull sandbox
+    ```
+
+=== "Python"
+
+    ```python
+    rapid2.pull.sandbox()
+    ```
 
 Once the download completes, you will notice three main file types populated
 across your new `input/Sandbox/` and `output/Sandbox/` directories:
@@ -56,9 +89,33 @@ across your new `input/Sandbox/` and `output/Sandbox/` directories:
 RAPID2 uses a YAML configuration file (a "namelist"). Execute the model by
 pointing the CLI to the Sandbox namelist you just downloaded:
 
-```bash
-rapid2 core run --namelist input/Sandbox/nml_Sandbox_OL.yml
-```
+=== "Bash"
+
+    ```bash
+    rapid2 core run --namelist input/Sandbox/nml_Sandbox_OL.yml
+    ```
+
+=== "Powershell"
+
+    ```bash
+    rapid2 core run --namelist input/Sandbox/nml_Sandbox_OL.yml
+    ```
+
+=== "Python"
+
+    ```python
+    r2.core.run(
+      Qex_ncf = './input/Sandbox/Qex_Sandbox_19700101_19700110_FG.nc4',
+      Q00_ncf = './input/Sandbox/Q00_Sandbox_19700101_19700110_FG.nc4',
+      con_pqt = './input/Sandbox/con_Sandbox.parquet',
+      kpr_pqt = './input/Sandbox/kpr_Sandbox.parquet',
+      xpr_pqt = './input/Sandbox/xpr_Sandbox.parquet',
+      bas_pqt = './input/Sandbox/bas_Sandbox_ascend.parquet',
+      IS_dtR = 900,
+      Qou_ncf = './output/Sandbox/Qou_Sandbox_19700101_19700110_OL_tst.nc4',
+      Qfi_ncf = './output/Sandbox/Qfi_Sandbox_19700101_19700110_OL_tst.nc4'
+    )
+    ```
 
 When the progress bar finishes, RAPID2 will have generated your new simulated
 outflow data (`Qou`) and your final state file (`Qfi`) in the `output/Sandbox/`
@@ -74,31 +131,84 @@ to isolate the river reaches where observations exist (`obs`) and match their
 daily (`86400` seconds) cadence, creating a Model Equivalent (`Qme`) to
 observations:
 
-```bash
-rapid2 prep sample \
-  -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_OL_tst.nc4 \
-  -obs input/Sandbox/obs_Sandbox.parquet \
-  -dtO 86400 \
-  -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4
-```
+=== "Bash"
+
+    ```bash
+    rapid2 prep sample \
+      -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_OL_tst.nc4 \
+      -obs input/Sandbox/obs_Sandbox.parquet \
+      -dtO 86400 \
+      -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4
+    ```
+
+=== "Powershell"
+
+    ```powershell
+    rapid2 prep sample `
+      -Qou output/Sandbox/Qou_Sandbox_19700101_19700110_OL_tst.nc4 `
+      -obs input/Sandbox/obs_Sandbox.parquet `
+      -dtO 86400 `
+      -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4
+    ```
+
+=== "Python"
+
+    ```python
+    rapid2.prep.sample( `
+      Qou = output/Sandbox/Qou_Sandbox_19700101_19700110_OL_tst.nc4,
+      obs = input/Sandbox/obs_Sandbox.parquet,
+      dtO = 86400,
+      Qme = output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4
+    )
+    ```
 
 Next, generate SVG plots comparing the model equivalent (`Qme`) to the true
 observations (`Qob`), setting the maximum value of discharge on the vertical
 axis (`125`):
 
-```bash
-rapid2 eval graph \
-  -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
-  -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4 \
-  -max 125 \
-  -hyd output/Sandbox/hyd_Qou_OL.svg
-```
+=== "Bash"
+
+    ```bash
+    rapid2 eval graph \
+      -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 \
+      -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4 \
+      -max 125 \
+      -hyd output/Sandbox/hyd_Qou_OL.svg
+    ```
+
+=== "Powershell"
+
+    ```powershell
+    rapid2 eval graph `
+      -Qob input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4 `
+      -Qme output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4 `
+      -max 125 `
+      -hyd output/Sandbox/hyd_Qou_OL.svg
+    ```
+
+=== "Python"
+
+    ```python
+    rapid2.eval.graph(
+      Qob = input/Sandbox/Qob_Sandbox_19700101_19700110_TR.nc4,
+      Qme = output/Sandbox/Qme_Sandbox_19700101_19700110_OL_tst.nc4,
+      max = 125,
+      hyd = output/Sandbox/hyd_Qou_OL.svg
+    )
+    ```
 
 Check your `output/Sandbox/` folder for the newly generated `.svg` files: you
 have successfully run and visualized your first RAPID2 simulation!
 
 Now you can safely deactivate your virtual environment:
 
-```bash
-deactivate
-```
+=== "Bash"
+
+    ```bash
+    deactivate
+    ```
+=== "Powershell"
+
+    ```powershell
+    deactivate
+    ```
