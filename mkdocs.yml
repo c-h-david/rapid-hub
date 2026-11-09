@@ -51,6 +51,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - toc.follow
+    - content.tabs.link
 
 extra_css:
   - stylesheets/extra.css
